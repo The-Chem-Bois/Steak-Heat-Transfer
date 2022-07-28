@@ -9,7 +9,6 @@ We use the heat_function import as the MOL tool used to compute the temperature 
 
 The goal of this code is to compute what a reasonable time is to cook 
 '''
-from cProfile import label
 import numpy as np
 from heat_function import get_steak_T_profile
 import matplotlib.pyplot as plt

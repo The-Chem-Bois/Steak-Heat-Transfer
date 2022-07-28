@@ -9,7 +9,7 @@ import numpy as np
 from scipy.integrate import solve_ivp
 
 # Define our variables
-To = 218 + 273.15 # Initial Temperature of pan/bottom of the steak at t>0
+To = 190 + 273.15 # Initial Temperature of pan/bottom of the steak at t>0
 k = 0.41 # heat transfer coefficient J/(m K s)
 rho = 1.033 * 100**3 #density g/m^3
 cp = 2.7 #heat capacity of steak J/ (g K)
@@ -26,7 +26,6 @@ dz=.00127 # m (allows us to have 31 nodes)
 z0,zend = 0,0.0381 #thickness range of steak in m 
 
 n=int((zend-z0)/dz + 1) #number of points in z
-z_val=np.linspace(z0,zend,n)
 
 #Define 
 def ode(t,T):
@@ -38,9 +37,9 @@ def ode(t,T):
     #dT[0]=T_all[2]-2*T_all[1]+T_all[0]
 
     #last node 
-    #dV[n+1]=V_all[n+2]-2*V_all[n+1]+V_all[n]
+    #dT[n+1]=T_all[n+2]-2*T_all[n+1]+T_all[n]
     #sub in BC
-    #dV[n+1]=-2*V_all[n+1]+2 V_all[n]
+    #dT[n+1]=-2*T_all[n+1]+2 T_all[n]
 
 
 

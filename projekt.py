@@ -72,6 +72,8 @@ def get_steak_T_profile(initial_condition):
     time_interval = np.arange(0,630,30) # 600 seconds is 10 minutes, every 30 second interval
     solution=solve_ivp(ode,[t0,tend],initial_condition,t_eval=time_interval)
 
+    return(solution.y, solution.t)
+
 
 
 if __name__ == "__main__":
